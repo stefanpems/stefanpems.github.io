@@ -10,7 +10,7 @@ Recently, I read this interesting official blog post: [Track changes to sensitiv
 
 I though that the proposed KQL code could be very simply used to get the security supervisors notified by email, for example, in the event of new users added to the Domain Admins group or to any other sensitive group in AD. Quite a useful monitoring functionality that could be achieved just as a side-capability of MDI. 
 
-Just to be clear, MDI is an extremely important technology, allowing prevention, detection, investigation and response for protecting the on premises AD and the ADFS servers, the so called "Tier 0" of the IT security in most organizations. The capability described here is just a consequence of the availability of the data collected on the DCs.
+Just to be clear, [MDI](https://docs.microsoft.com/en-us/defender-for-identity/what-is) is an extremely important technology, allowing prevention, detection, investigation and response for protecting the on premises AD infrastructue and the ADFS servers, the so called "Tier 0" of the IT security in most organizations. The capability described here is just a consequence of the availability of the data collected on the DCs.
 
 My first thought was to simply create a Custom Detection Rule in Microoft 365 (M365) Defender, to be executed periodically (e.g., every 1 hour), with a KQL query almost identical to the one described in the above mentioned article. I did only 3 minimal modifications:
 1. In order to simplify the first implementation, I limited the query to the Domain Admins group
