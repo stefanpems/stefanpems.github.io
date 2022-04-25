@@ -14,10 +14,10 @@ Unfortunately, it seems that you can't use this connector for querying tables no
 
 ![error-failed-to-resolve-table](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/f7186a6c1fc3314362cd8aae60e5a31317fdac82/assets/2022-04-25-Logic%20App%20and%20M365DAPI/error-mdi-table-in-mde-query.png)
 
-In order to query, from a Logic App, the tables related to any Microsoft 365 Defender service included MDI, it is possible to use the Microsoft 365 Defender API. You can do a first test of these APIs on the Microsoft 365 Defender portal: under the "Endpoint" section, open "Partners and APIs" and then "API explorer". Here you can open any sample query, change the URL of ths service (from "https://api-eu.securitycenter.windows.com/api/advancedhunting/run" to "https://api.security.microsoft.com/api/advancedhunting/run") and change the KQL to query the desired tables.
+The Microsoft 365 Defender APIs allow to query remotely the tables related to any Microsoft 365 Defender service included MDI. You can do a first test of these APIs on the same Microsoft 365 Defender portal: under the "Endpoint" section, open "Partners and APIs" and then "API explorer". Here you can open the "Run Advanced Hunting query", change the URL of ths service (from "https://api-eu.securitycenter.windows.com/api/advancedhunting/run" to "https://api.security.microsoft.com/api/advancedhunting/run") and change the KQL to query the desired tables.
 
--img
+![query-in-m365d-api-explorer](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/ac148fbc909417253a863718df2b2efedbd06f01/assets/2022-04-25-Logic%20App%20and%20M365DAPI/query-in-m365d-api-explorer.png)
 
-
+In 
 
 
