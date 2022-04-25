@@ -37,7 +37,7 @@ The first HTTP request is requested to get the token. It should look like this:
 
 ![get-token-request](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/get-token-req.png)
 
-When executed, to can copy the token and decode it in [https://jwt.ms/](https://jwt.ms/), to ensure that it includes the reference to https://api.security.microsoft.com (in "aud") and the correct permissions (in "roles"):
+When executed, to can copy the token and decode it in [https://jwt.ms/](https://jwt.ms/), to ensure that it includes the reference to "https://api.security.microsoft.com" (in "aud", the resource) and the correct permissions (in "roles"):
 
 ![get-token-response](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/get-token.res.png)
 ![token-decoded](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/token-decoded.png)
