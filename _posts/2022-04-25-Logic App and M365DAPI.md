@@ -22,7 +22,7 @@ In order to execute the same KQL query from a Logic App, in the absence of a nat
 
 Before creating the Logic App, it is necessary to register an App in Azure AD by following the steps documented in the paragraph "Register an app in Azure Active Directory" on this page: [https://docs.microsoft.com/en-us/microsoft-365/security/defender/api-hello-world?view=o365-worldwide#register-an-app-in-azure-active-directory](https://docs.microsoft.com/en-us/microsoft-365/security/defender/api-hello-world?view=o365-worldwide). Please note that, to ensure the right to call advanced hunting queries, it is necessary to assign also the permission (and admin consent) for "AdvancedHunting.Read.All" 
 
--img 
+[permissions](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/permissions.png)
 
 Before continuing, you need to ensure that you have:
 * The Tenant ID
@@ -33,11 +33,11 @@ In the body sent to get the token, you needed also to specify these two strings:
 * resource=https://api.security.microsoft.com
 * grant_type=client_credentials
 
-The first HTTP request to get the token should look like this:
+The first HTTP request is requested to get the token. It should look like this:
 
--img
+[get-token-request](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/get-token-req.png)
 
 When executed, to can copy the token and decode it in [https://jwt.ms/](https://jwt.ms/), to ensure that it includes the reference to https://api.security.microsoft.com (in "aud") and the correct permissions (in "roles"):
 
--img
--img
+[get-token-response](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/get-token.res.png)
+[token-decoded](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/token-decoded.png)
