@@ -62,7 +62,7 @@ author:
   bio    : "I'm a Technical Specialist in Microsoft on IT Security technologies. I'm sharing here personal tips and experiences: nothing I write should be taken as an official opinion of my employer "
   links:
     - label: "LinkedIn"
-      icon: "fas fa-fw fa-linkedin"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/stefanopescosolido/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
