@@ -14,10 +14,30 @@ Unfortunately, it seems that you can't use this connector for querying tables no
 
 ![error-failed-to-resolve-table](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/f7186a6c1fc3314362cd8aae60e5a31317fdac82/assets/2022-04-25-Logic%20App%20and%20M365DAPI/error-mdi-table-in-mde-query.png)
 
-The Microsoft 365 Defender APIs allow to query remotely the tables related to any Microsoft 365 Defender service included MDI. You can do a first test of these APIs on the same Microsoft 365 Defender portal: under the "Endpoint" section, open "Partners and APIs" and then "API explorer". Here you can open the "Run Advanced Hunting query", change the URL of ths service (from "https://api-eu.securitycenter.windows.com/api/advancedhunting/run" to "https://api.security.microsoft.com/api/advancedhunting/run") and change the KQL to query the desired tables.
+The Microsoft 365 Defender APIs allow to query remotely the tables related to any Microsoft 365 Defender service included MDI. You can do a first test of these APIs on the same Microsoft 365 Defender portal: under the "Endpoint" section (...yes, this section is related to MDE but we are going to change the query), open "Partners and APIs" and then "API explorer". Here you can open the "Run Advanced Hunting query", change the URL of ths service (from "https://api-eu.securitycenter.windows.com/api/advancedhunting/run" to "https://api.security.microsoft.com/api/advancedhunting/run") and change the KQL to query the desired tables with the desired filters.
 
 ![query-in-m365d-api-explorer](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/ac148fbc909417253a863718df2b2efedbd06f01/assets/2022-04-25-Logic%20App%20and%20M365DAPI/query-in-m365d-api-explorer.png)
 
-In 
+In order to execute the same KQL query from a Logic App, in the absence of a native connector to the M365 Defender API, it is necessary to separately manage the retrieval of a valid authorization token for the API service from Azure Active Directory (step 1) and the execution of the query by passing that token (step 2). In my lab environment, I created the steps 1 and 2 by using a standard HTTP connector.
 
+Before creating the Logic App, it is necessary to register an App in Azure AD by following the steps documented in the paragraph "Register an app in Azure Active Directory" on this page: [https://docs.microsoft.com/en-us/microsoft-365/security/defender/api-hello-world?view=o365-worldwide#register-an-app-in-azure-active-directory](https://docs.microsoft.com/en-us/microsoft-365/security/defender/api-hello-world?view=o365-worldwide). Please note that, to ensure the right to call advanced hunting queries, it is necessary to assign also the permission (and admin consent) for "AdvancedHunting.Read.All" 
 
+-img 
+
+Before continuing, you need to ensure that you have:
+* The Tenant ID
+* The Application ID (a.k.a. as Client ID)
+* The Secret ID
+
+In the body sent to get the token, you needed also to specify these two strings:
+* resource=https://api.security.microsoft.com
+* grant_type=client_credentials
+
+The first HTTP request to get the token should look like this:
+
+-img
+
+When executed, to can copy the token and decode it in [https://jwt.ms/](https://jwt.ms/), to ensure that it includes the reference to https://api.security.microsoft.com (in "aud") and the correct permissions (in "roles"):
+
+-img
+-img
