@@ -62,6 +62,8 @@ The JSON template of the full Logic App can be found [here](https://github.com/s
 
 In my sample Logic App, from the results of the Advanced Hunting query I extract only the name of the users added as Domain Admins and send that list of concatenated names in the body of the notification email. In your Logic App you can add a more detailed logic; for example, you can extract the time when the change to the Domain Admins membership has happened, the author of the change, the possible names of the groups added to the Domain Admins, etc....
 
+![simple-email](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/simple-email.png)
+
 The KQL exectued in the Logic App is a simplified version of the query described in this official blog post: [Track changes to sensitive groups with Advanced Hunting in Microsoft 365 Defender](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/track-changes-to-sensitive-groups-with-advanced-hunting-in/ba-p/3275198).
 
 I hope that this can be useful for your needs of automated security controls.
