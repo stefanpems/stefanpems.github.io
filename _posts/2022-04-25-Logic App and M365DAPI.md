@@ -53,12 +53,12 @@ The described approach has been used to create a scheduled Logic App querying th
 ![full-logic-app](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/full-logic-app.png)
 
 The JSON template of the full Logic App can be found [here](https://github.com/stefanpems/m365defender/tree/main/Logic%20App): you can import it in your own Logic App, but you need first to replace these placeholders with their values in your environment:
-* "<insert-your-tenant-id>"
-* "<insert-your-application-ID>"
-* "<insert-your-application-secret>" 
-* "<insert-your-desired-email-recipients>"
-* "<insert-your-subscription-ID>" (It's the Azure Subscription ID where you have your Logic App)
-* "<insert-your-resource-group-name>" (It's the Azure Resource Group where you have your Logic App)
+* "insert-your-tenant-id"
+* "insert-your-application-ID"
+* "insert-your-application-secret" 
+* "insert-your-desired-email-recipients"
+* "insert-your-subscription-ID" (It's the Azure Subscription ID where you have your Logic App)
+* "insert-your-resource-group-name" (It's the Azure Resource Group where you have your Logic App)
 
 In my sample Logic App, from the results of the Advanced Hunting query I extract only the name of the users added as Domain Admins and send that list of concatenated names in the body of the notification email. In your Logic App you can add a more detailed logic; for example, you can extract the time when the change to the Domain Admins membership has happened, the author of the change, the possible names of the groups added to the Domain Admins, etc....
 
