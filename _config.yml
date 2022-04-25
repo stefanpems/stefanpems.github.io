@@ -27,7 +27,7 @@ search: true
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
 # Outputting
-permalink: /:categories/:title/
+permalink: /:tags/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -71,7 +71,7 @@ author:
 footer:
   links:
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin-square"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/stefanopescosolido/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -97,9 +97,6 @@ defaults:
       layout: single
       author_profile: true
 
-category_archive:
-  type: liquid
-  path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
