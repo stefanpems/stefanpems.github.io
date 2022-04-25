@@ -52,6 +52,6 @@ The described approach has been used to create a scheduled Logic App querying th
 
 ![full-logic-app](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/full-logic-app.png)
 
-The template of the full Logic App can be found [https://github.com/stefanpems/m365defender/tree/main/Logic%20App](here).
+The template of the full Logic App can be found [here](https://github.com/stefanpems/m365defender/tree/main/Logic%20App).
 
 I hope that this can be useful.
