@@ -3,6 +3,8 @@ permalink: /about/
 title: "About"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
-
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+Hi there! My name is Stefano Pescosolido, I'm a Microsoft employee, leaving and working in Italy. 
+I'm passionate of  modern Information Technology, especially related to cloud services and security.
+My current role is Technical Specialist in IT Security, so I'm very focused in understanding, experimenting and presenting new technologies.
+I created this simple blog site as a kind of personal notebook with public access. I hope that some content may be relevant to others. Happy to share! 
+Everything that is written here is my personal opinion and may differ from my employer's view. 
