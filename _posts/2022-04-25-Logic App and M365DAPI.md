@@ -26,7 +26,7 @@ The Microsoft 365 Defender APIs allow to query remotely the tables related to an
 
 In order to execute the same KQL query from a Logic App, in the absence of a native connector to the M365 Defender API, it is necessary to separately manage the retrieval of a valid authorization token for the API service from Azure Active Directory (step 1) and the execution of the query by passing that token (step 2). In my lab environment, I created the steps 1 and 2 by using a standard HTTP connector.
 
-Before creating the Logic App, it is necessary to register an App in Azure AD by following the steps documented in the paragraph "Register an app in Azure Active Directory" on this page: [https://docs.microsoft.com/en-us/microsoft-365/security/defender/api-hello-world?view=o365-worldwide#register-an-app-in-azure-active-directory](https://docs.microsoft.com/en-us/microsoft-365/security/defender/api-hello-world?view=o365-worldwide). Please note that, to ensure the right to call advanced hunting queries, it is necessary to assign also the permission (and admin consent) for "AdvancedHunting.Read.All" 
+Before creating the Logic App, it is necessary to register an App in Azure AD by following the steps documented in the paragraph "Register an app in Azure Active Directory" on this [MS Docs page](https://docs.microsoft.com/en-us/microsoft-365/security/defender/api-hello-world?view=o365-worldwide). Please note that, to ensure the right to call the advanced hunting API, it is necessary to assign also the permission (and admin consent) for "AdvancedHunting.Read.All" 
 
 ![permissions](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/permissions.png)
 
