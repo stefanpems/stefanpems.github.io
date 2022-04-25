@@ -7,7 +7,7 @@ tags:
   - Logic Apps
 ---
 
-Recently I needed to create an automation for executing periodically a specific Kusto query against the Advanced Hunting tables of Microsoft Defender for Identity (MDI). My objective was to identify the events of new users added to the Domain Admins group in Active Directory; more on that in this other blo post: [How to get notified for new users added as Domain Admins](https://stefanpems.github.io/How-to-get-notified-for-new-users-added-to-Domain-Admins/)
+Recently I needed to create an automation for executing periodically a specific Kusto query against the Advanced Hunting tables of Microsoft Defender for Identity (MDI). My objective was to identify the events of new users added to the Domain Admins group in Active Directory; more on that in this other blog post: [How to get notified for new users added as Domain Admins](https://stefanpems.github.io/How-to-get-notified-for-new-users-added-to-Domain-Admins/)
 
 I realized the desired automation as an Azure Logic App that queries the Microsoft 365 Defender API. 
 
