@@ -9,8 +9,8 @@ tags:
 
 Recently I needed to create a Logic App to execute periodically a specific Kusto query against the Advanced Hunting Tables of Microsoft Defender for Identity.
 
-Logic App Standard and Power Automate Premium have a native connector for Microsoft Defender for Endpoint (MDE): https://docs.microsoft.com/en-us/connectors/wdatp/. It includes an Advanced Hunting action, allowing to run a Kusto query against the tables related to MDE. Adding that action to a Logic App workflow is strightforward: it simply asks to sign-in once, so that it creates the connection to the MDE service, and the KQL query to execute.
+Logic App Standard and Power Automate Premium have a native connector for Microsoft Defender for Endpoint (MDE): [https://docs.microsoft.com/en-us/connectors/wdatp/](https://docs.microsoft.com/en-us/connectors/wdatp/). It includes an Advanced Hunting action, allowing to run a Kusto query against the tables related to MDE. Adding that action to a Logic App workflow is strightforward: it simply asks to sign-in once, so that it creates the connection to the MDE service, and the KQL query to execute.
 Unfortunately, it seems that you can't use this connector for querying tables not related to MDE. In my experience, you get an error:
 
--image-
+![error-failed-to-resolve-table](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/f7186a6c1fc3314362cd8aae60e5a31317fdac82/assets/2022-04-25-Logic%20App%20and%20M365DAPI/error-mdi-table-in-mde-query.png)
 
