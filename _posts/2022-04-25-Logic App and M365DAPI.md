@@ -42,10 +42,16 @@ When executed, to can copy the token and decode it in [https://jwt.ms/](https://
 [get-token-response](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/get-token.res.png)
 [token-decoded](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/token-decoded.png)
 
-The token can be read in the Logic App by using the Parse JSON action. It can then be used to call the Advanced Hunting API as shown below. Please note that the body of the HTTP call action contains the KQL used to query the MDI tables.
+The token read in the Logic App by using the Parse JSON action is then used to call the Advanced Hunting API as shown below. Please note that the body of the HTTP call action contains the KQL used to query the MDI tables.
 
 [call-advancedhunting](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/call-advanced-hunting-api.png)
 
-The results of this call can be parsed, again by using the Parse JSON action, so that the workflow can manage them with the desired logic.
+The results of this call is finally parsed, again by using the Parse JSON action, so that the workflow can manage them with the desired logic.
 
-The described approach has been used to create a scheduled Logic App querying the MDI table "IdentityDirectoryEvents" with the aim to identify the users that have been recently added to the Domain Admins group. If the query returns at least one user, the list of added users is sent by email to some recipients
+The described approach has been used to create a scheduled Logic App querying the MDI table "IdentityDirectoryEvents" with the aim to identify the users that have been recently added to the Domain Admins group. If the query returns one or more users, the list of their names is sent by email to a specified recipient. 
+
+[full-logic-app](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/full-logic-app.png)
+
+The template of the full Logic App can be found here: [https://github.com/stefanpems/m365defender/tree/main/Logic%20App] (https://github.com/stefanpems/m365defender/tree/main/Logic%20App).
+
+I hope that this can be useful.
