@@ -35,11 +35,11 @@ I also noticed a second, very important evidence: the events collected by the MD
 
 With these two evidences in mind, I started investigating how to obtain the desired behavior. 
 
-In my lab, like many of my customers, I have also [Microsoft Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/overview) and its [M365 Defeneder connector](https://docs.microsoft.com/en-us/azure/sentinel/connect-microsoft-365-defender?tabs=MDI) already configured to import MDI related tables. 
+In my lab, like many of my customers, I have also [Microsoft Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/overview) and its [M365 Defender connector](https://docs.microsoft.com/en-us/azure/sentinel/connect-microsoft-365-defender?tabs=MDI) already configured to import MDI related tables. 
 
 ![data-connector](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-How%20to%20get%20notified%20for%20new%20users%20added%20to%20Domain%20Admins/data-connector.png)
 
-In these conditions, it is very easy to create a Scheduled Analytic Rules in Sentinel, doing periodically the same KQL query that I was trying to realize through a Custom Detection Rule. It is also very easy to add a Playbook to send a notification email with the evidences of the query results.
+In these conditions, it is very easy to create a Scheduled Analytic Rules in Sentinel, doing periodically the same KQL query that I was trying to implement through a Custom Detection Rule. It is also very easy to add a Playbook to send a notification email with the evidences of the query results; it's possible to start from the existing "Send basic email" [Playbook Template](https://docs.microsoft.com/en-us/azure/sentinel/automate-responses-with-playbooks#playbook-templates).
 
 ![analytic-rule-query](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-How%20to%20get%20notified%20for%20new%20users%20added%20to%20Domain%20Admins/analytic-rule-query.png)
 
@@ -47,7 +47,7 @@ In these conditions, it is very easy to create a Scheduled Analytic Rules in Sen
 
 This is a valid solution for the customers who have already decided to benefit from the SIEM and SOAR capabilities available in Microsoft Sentinel. But, how to obtain the desired email notifications for those customers not using Sentinel or not importing MDI data in Sentinel? 
 
-This is possible by using Logic Apps and the M365 Defender API. The solution is fully described in this other blog post: [How to call Microsoft 365 Defender API from a Logic App](https://stefanpems.github.io/Logic-App-and-M365DAPI/). The source code is [here](https://github.com/stefanpems/m365defender/tree/main/Logic%20App). Basically, the Logic App makes two HTTP calls: the first one is a POST to Azure AD to obtain a JWT token, the second one is a POST to the M365 Advanced Hunting API to execute the desired KQL query. The possible results are sent by email. The execution of the Logic App is scheduled periodically. 
+This is possible by using Logic Apps and the M365 Defender API. The solution is fully described in this other dedicated post in my blog: [How to call Microsoft 365 Defender API from a Logic App](https://stefanpems.github.io/Logic-App-and-M365DAPI/). The source code is [here](https://github.com/stefanpems/m365defender/tree/main/Logic%20App). Basically, the Logic App makes two HTTP calls: the first one is a POST to Azure AD to obtain a JWT token, the second one is a POST to the M365 Advanced Hunting API to execute the desired KQL query. The possible results are sent by email. The execution of the Logic App is scheduled periodically. 
 
 ![full-logic-app](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-Logic%20App%20and%20M365DAPI/full-logic-app.png)
 
