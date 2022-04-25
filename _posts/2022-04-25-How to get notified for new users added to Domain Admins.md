@@ -12,7 +12,7 @@ I though that the proposed KQL code could be very simply used to get the securit
 
 Just to be clear, [MDI](https://docs.microsoft.com/en-us/defender-for-identity/what-is) is an extremely important technology, allowing prevention, detection, investigation and response for protecting the on premises AD infrastructue and the ADFS servers, the so called "Tier 0" of the IT security in most organizations. The capability described here is just a consequence of the availability of the data collected on the DCs.
 
-My first thought was to simply create a Custom Detection Rule in Microoft 365 (M365) Defender, to be executed periodically (e.g., every 1 hour), with a KQL query almost identical to the one described in the above mentioned article. I did only 3 minimal modifications:
+My first thought was to simply create a Custom Detection Rule in Microsoft 365 (M365) Defender, to be executed periodically (e.g., every 1 hour), with a KQL query almost identical to the one described in the above mentioned article. I did only 3 minimal modifications:
 1. In order to simplify the first implementation, I limited the query to the Domain Admins group
 2. I added the initial statement "where ingestion_time() > ago(1h)", to get only the data ingested in the last hour
 3. I added the AccountSid and ReportId field as required by the Custom Detection Rules (see [here](https://docs.microsoft.com/en-us/microsoft-365/security/defender/custom-detection-rules))
@@ -21,21 +21,21 @@ The first execution was successful: as expected, it created an Incident and an A
 
 ![new-incident](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-How%20to%20get%20notified%20for%20new%20users%20added%20to%20Domain%20Admins/new-incident.png)
 
-I order to get notified by email, I though I had only to configure the "Notification" feature in the M365 Defender settings and my objective was achieved. 
+In order to get notified by email, I though I had only to configure the "Notification" feature in the M365 Defender settings and my objective was achieved. 
 
-Well, I was wrong: while doing a second test, I noticed that the new detections of that same Custom Detection Rules were added in the timeline of the already existing Aler instead of creating a new Incident, as I was expecting. Because of that, no new email notification was sent.
+Well, I was wrong: while doing a second test, I noticed that the new detections of that same Custom Detection Rules were added in the timeline of the already existing Alert instead of creating a new Incident, as I was expecting. Because of that, no new email notification was sent.
 
 ![alert-timeline](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-How%20to%20get%20notified%20for%20new%20users%20added%20to%20Domain%20Admins/alert-timeline.png)
 
 In my experience, new Incidents are created only if the Custom Dection Rule identifies new results after some days from the last detection.
 
-I'm still investigation if the Custom Detection Rules can be configured to ensure that any new execution returning one or more results creates a new Incidents. If I'll find a way, I'll update this blog post. Apparently this is not possible, and it seems to be "by design": one of the important objectives of M365 Defender is to reduce the "alert fatigue" for the security analysts and this objective is pursuit also by minimizing the number of Incidents related to similar events. 
+I'm still investigating if the Custom Detection Rules can be configured to ensure that any new execution returning one or more results creates a new Incidents. If I'll find a way, I'll update this blog post. Apparently this is not possible, and it seems to be "by design": one of the important objectives of M365 Defender is to reduce the "alert fatigue" for the security analysts and this objective is pursuit also by minimizing the number of Incidents related to similar events. 
 
-I also noticed a second, very important evidence: the events collected by the MDI sensor arrive on the Advanced Hunting tables in M365 Defender with a variable and possibly substantial delay. In my experience, the detection of a change in a group membership (event with "ActionType"="Group Membership changed") arrives on the Advanced Hunting table "IdentityDirectoryEvents" with a delay varying from s few minutes to even a couple of hours. Because of that, I understood that the notification logic that I was trying to implement should not be considered a "near real-time detection"; it is, instead, a periodical supervision.  
+I also noticed a second, very important evidence: the events collected by the MDI sensor arrive on the Advanced Hunting tables in M365 Defender with a variable and possibly substantial delay. In my experience, the detection of a change in a group membership (event with "ActionType"="Group Membership changed") arrives on the Advanced Hunting table "IdentityDirectoryEvents" with a delay varying from a few minutes to even more than a couple of hours. Because of that, I understood that the notification logic that I was trying to implement should not be considered a "near real-time detection"; it is, instead, a periodical supervision.  
 
 With these two evidences in mind, I started investigating how to obtain the desired behavior. 
 
-In my lab I have also Sentinel and its M365 Defeneder connector already configured to import MDI related tables. 
+In my lab, like many of my customers, I have also [Microsoft Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/overview) and its [M365 Defeneder connector](https://docs.microsoft.com/en-us/azure/sentinel/connect-microsoft-365-defender?tabs=MDI) already configured to import MDI related tables. 
 
 ![data-connector](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-04-25-How%20to%20get%20notified%20for%20new%20users%20added%20to%20Domain%20Admins/data-connector.png)
 
