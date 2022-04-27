@@ -4,6 +4,8 @@ last_modified_at: 2022-04-27T00:00:00-00:00
 tags:
   - M365 Defender
   - MDI
+  - Sentinel
+  - Azure Monitor
 ---
 
 Recently, I read this interesting official blog post: [Track changes to sensitive groups with Advanced Hunting in Microsoft 365 Defender](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/track-changes-to-sensitive-groups-with-advanced-hunting-in/ba-p/3275198): it clearly explains how to query the Advanced Hunting table "IdentityDirectoryEvents" populated by the Microsoft Defender for Identity (MDI) sensor running on the Domain Controllers (DCs) of the on premises Active Directory (AD) infrastructure. 
@@ -65,6 +67,6 @@ An alternative solution (...my favorite one) is to create a simple Logic App con
 
 A third alternative is by creating and Automation Rule for having an alert created in Sentinel and a Playbook triggered by that alert. 
 
-A last but very important point: this solution based on monitoring the event 4728 on the SecurityEvent table has the very welcome charactetistic to be extremely fast and reliable in terms of delays: the collection latency for the Azure Monitor Agent [is minimal](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/data-ingestion-time#agent-collection-latency), so the event 4728 appears in the SecurityEvent table almost immediately after the change done on the group membership for the Domain Admins group. In these conditions, it is also possible to build a near-real time execution logic based on Playbooks.
+A last but very important point: this solution based on monitoring the event 4728 on the SecurityEvent table has the very welcome charactetistic to be extremely fast and reliable in terms of delay: the collection latency for the Azure Monitor Agent [is minimal](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/data-ingestion-time#agent-collection-latency), so the event 4728 appears in the SecurityEvent table almost immediately after the change done on the group membership for the Domain Admins group. In these conditions, it is also possible to build a near-real time execution logic based on Playbooks.
 
 I hope this helps.
