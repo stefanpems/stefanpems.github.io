@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Stefano Pescosolido"
   avatar : "/assets/images/stefanpe-2021.10 - LIN.jpg"
-  bio    : "I'm a Technical Specialist in Microsoft on IT Security technologies. I'm sharing here personal tips and experiences: nothing I write should be taken as an official opinion of my employer. My comments can be incomplete or even wrong. Please exercise caution when you evaluate my findings. My statements can be incomplete or even wrong. Please exercise caution when you evaluate my findings and comments. Apart from that, I hope that this content may be relevant and useful to others. Happy to share!"
+  bio    : "I'm a Technical Specialist in Microsoft on IT Security technologies. I'm sharing here personal tips and experiences: nothing I write should be taken as an official opinion of my employer. My statements can be incomplete or even wrong. Please exercise caution when you evaluate my findings and comments. Apart from that, I hope that this content may be relevant and useful to others. Happy to share!"
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
