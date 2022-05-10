@@ -31,7 +31,7 @@ In our simple tests we saw these expected behaviors:
 * The MySQL single server instance went in "Inaccessible" state
 ![err-mysql](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-09-How%20to%20verify%20the%20effective%20use%20of%20Customer%20Managed%20Keys/errmysql.png)
 
-It was enough to re-enable the key to restore the operation of the service and the access to its data (for MySQL it's necessary to perform a simple additional action manually: revalidate the customer-managed key in the data encryption settings). 
+It was enough to re-enable the key(s) to restore the operation of the services and the access to their data (for MySQL it was necessary to perform a simple additional action manually: revalidate the customer-managed key in the data encryption settings). 
 
 In a test environment, the approach of temporaly disabling the new CMK in AKV is quite instructive also because it gives the opportunity to "touch with hands" what could be the consequences of unwanted mistakes or deliberate destructive actions in key management operations. Fortunately, AKV offers [soft delete and purge protection](https://docs.microsoft.com/en-us/azure/key-vault/general/key-vault-recovery?tabs=azure-portal) functionalities to allow recovery from this kind of incidents. 
 
