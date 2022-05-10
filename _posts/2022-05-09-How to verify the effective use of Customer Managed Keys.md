@@ -2,9 +2,11 @@
 title: "How to verify the effective use of Customer Managed Keys"
 last_modified_at: 2022-05-10T07:15:02-05:00
 tags:
-  - CMK
+  - BYOK
+  - Customer Managed Key
   - Azure Monitor
   - Sentinel
+  - Defender for Cloud
 ---
 
 All customers data in Azure is [encrypted "at rest"](https://docs.microsoft.com/en-us/azure/security/fundamentals/encryption-atrest) on the Microsoft datacenters. By default, the keys used in the cryptographic operations are totally managed by Microsoft throughout their entire lifecycle: they are defined as "[Microsoft Managed Keys](https://docs.microsoft.com/en-us/azure/security/fundamentals/key-management)" (MMKs) (sometimes also referred as "Platform Managed Keys" or "Service Managed Keys"). 
