@@ -13,9 +13,13 @@ A wide majority of Azure PaaS and IaaS services storing customers' data allows t
 
 Recently I supported customers in testing these "CMK activation procedures" for a few of these services: [Storage Accounts](https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview?msclkid=16aa21a2cfd611ecae252c93394e42f0), [VM Disks](https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-customer-managed-keys-portal?msclkid=28fb38adcfd611ec848de7615adb36d0), [Information Protection](https://docs.microsoft.com/en-us/azure/information-protection/byok-price-restrictions) and PaaS Databases (specifically [MySQL](https://docs.microsoft.com/en-us/azure/mysql/concepts-data-encryption-mysql?msclkid=80b887a9cfd611ec85dd911de5ef65e7)). Each time, after the configuration change was made, there was a need to verify that the change was effetctive. 
 
-Thanks to the fact that we were operating in test environments, we have always approached these post-change verifications by temporarly disabling the new CMK in AKV: as expected, this action, after a short amount of time, made it impossible to access the data managed by the specific service and, in most cases, blocked entirely the service itself. It was enough to re-enable the key to restore the operation of the service and the access to its data (for MySQL it's necessary to perform a simple additional action manually: revalidate the customer-managed key in the data encryption settings). 
+Thanks to the fact that we were operating in test environments, we have always approached these post-change verifications by temporarly disabling the new CMK in AKV: as expected, this action, after a short amount of time, made it impossible to access the data managed by the specific service and, in most cases, blocked entirely the service itself. 
 
-In a test environment, the approach of temporaly disabling the new CMK in AKV is quite instructive also because it gives the opportunity to "touch with hands" what could be the consequences of unwanted mistakes or deliberate destructive actions in key management operations. Fortunately, AKV offers [soft delete and purge protection](https://docs.microsoft.com/en-us/azure/key-vault/general/key-vault-recovery?tabs=azure-portal) functionalities to allow recovery from this kind of incidents. In our simple tests we saw the expected behaviors:
+![key-disabled](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-09-How%20to%20verify%20the%20effective%20use%20of%20Customer%20Managed%20Keys/disabledkey.png)
+
+It was enough to re-enable the key to restore the operation of the service and the access to its data (for MySQL it's necessary to perform a simple additional action manually: revalidate the customer-managed key in the data encryption settings). 
+
+In a test environment, the approach of temporaly disabling the new CMK in AKV is quite instructive also because it gives the opportunity to "touch with hands" what could be the consequences of unwanted mistakes or deliberate destructive actions in key management operations. Fortunately, AKV offers [soft delete and purge protection](https://docs.microsoft.com/en-us/azure/key-vault/general/key-vault-recovery?tabs=azure-portal) functionalities to allow recovery from this kind of incidents. In our simple tests we saw these expected behaviors:
 
 * It was no longer possible to access the data in the Storage Account by using Storage browser
 ![err-storage-account](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-09-How%20to%20verify%20the%20effective%20use%20of%20Customer%20Managed%20Keys/errstacc.png)
@@ -25,6 +29,9 @@ In a test environment, the approach of temporaly disabling the new CMK in AKV is
 
 * It was no longer possible to apply a Sensitivity Label with encryption on an email sent in OWA
 ![err-sensitivity-label](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-09-How%20to%20verify%20the%20effective%20use%20of%20Customer%20Managed%20Keys/errsenslb.png)
+
+* The MySQL single server instance went in "Inaccessible" state
+![err-mysql](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-09-How%20to%20verify%20the%20effective%20use%20of%20Customer%20Managed%20Keys/errmysql.png)
 
 A more generic way to test the effectiveness of the CMK configuration - clearly more adequate to production environments, where it's not possible to temporarly disable an encryption key - is by leveraging the [AKV diagnostic logging](https://docs.microsoft.com/en-us/azure/key-vault/general/logging?msclkid=3d06db48cf7911eca12c8d15f1b5f54a&tabs=Vault) capability and the power of [Azure Log Analytics](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview?msclkid=55ebe7dfcfda11ecb769e24a6a323b3b). Specifically, [in the "Diagnostic settings" configuration of AKV](https://docs.microsoft.com/en-us/azure/key-vault/general/howto-logging?tabs=azure-portal), it is possible to specify that "AuditEvents" must be collected and archived in a Log Analytics workspace. 
 
