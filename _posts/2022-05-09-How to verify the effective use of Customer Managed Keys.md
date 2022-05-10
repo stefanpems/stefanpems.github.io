@@ -1,6 +1,6 @@
 ---
 title: "How to verify the effective use of Customer Managed Keys"
-last_modified_at: 2022-05-09T23:15:02-05:00
+last_modified_at: 2022-05-10T07:15:02-05:00
 tags:
   - CMK
   - Azure Monitor
