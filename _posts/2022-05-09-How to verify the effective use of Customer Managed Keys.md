@@ -17,9 +17,7 @@ Thanks to the fact that we were operating in test environments, we have always a
 
 ![key-disabled](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-09-How%20to%20verify%20the%20effective%20use%20of%20Customer%20Managed%20Keys/disabledkey.png)
 
-It was enough to re-enable the key to restore the operation of the service and the access to its data (for MySQL it's necessary to perform a simple additional action manually: revalidate the customer-managed key in the data encryption settings). 
-
-In a test environment, the approach of temporaly disabling the new CMK in AKV is quite instructive also because it gives the opportunity to "touch with hands" what could be the consequences of unwanted mistakes or deliberate destructive actions in key management operations. Fortunately, AKV offers [soft delete and purge protection](https://docs.microsoft.com/en-us/azure/key-vault/general/key-vault-recovery?tabs=azure-portal) functionalities to allow recovery from this kind of incidents. In our simple tests we saw these expected behaviors:
+In our simple tests we saw these expected behaviors:
 
 * It was no longer possible to access the data in the Storage Account by using Storage browser
 ![err-storage-account](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-09-How%20to%20verify%20the%20effective%20use%20of%20Customer%20Managed%20Keys/errstacc.png)
@@ -32,6 +30,10 @@ In a test environment, the approach of temporaly disabling the new CMK in AKV is
 
 * The MySQL single server instance went in "Inaccessible" state
 ![err-mysql](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-09-How%20to%20verify%20the%20effective%20use%20of%20Customer%20Managed%20Keys/errmysql.png)
+
+It was enough to re-enable the key to restore the operation of the service and the access to its data (for MySQL it's necessary to perform a simple additional action manually: revalidate the customer-managed key in the data encryption settings). 
+
+In a test environment, the approach of temporaly disabling the new CMK in AKV is quite instructive also because it gives the opportunity to "touch with hands" what could be the consequences of unwanted mistakes or deliberate destructive actions in key management operations. Fortunately, AKV offers [soft delete and purge protection](https://docs.microsoft.com/en-us/azure/key-vault/general/key-vault-recovery?tabs=azure-portal) functionalities to allow recovery from this kind of incidents. 
 
 A more generic way to test the effectiveness of the CMK configuration - clearly more adequate to production environments, where it's not possible to temporarly disable an encryption key - is by leveraging the [AKV diagnostic logging](https://docs.microsoft.com/en-us/azure/key-vault/general/logging?msclkid=3d06db48cf7911eca12c8d15f1b5f54a&tabs=Vault) capability and the power of [Azure Log Analytics](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview?msclkid=55ebe7dfcfda11ecb769e24a6a323b3b). Specifically, [in the "Diagnostic settings" configuration of AKV](https://docs.microsoft.com/en-us/azure/key-vault/general/howto-logging?tabs=azure-portal), it is possible to specify that "AuditEvents" must be collected and archived in a Log Analytics workspace. 
 
