@@ -112,6 +112,8 @@ From a monitoring point of view, it is important to consider that [the different
 
 ![azure-monitor-for-AKV](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-09-How%20to%20verify%20the%20effective%20use%20of%20Customer%20Managed%20Keys/azmon.png)
 
+It is also extremely important to set alerts on the monitoring parameters related to the AKV health, like the "saturation". Details on how to set these alerts can be found [here](https://docs.microsoft.com/en-us/azure/key-vault/general/alert).
+
 As a final tought, it's worth to remind that AKV is a ["Tier 0" service](https://docs.microsoft.com/en-us/security/compass/privileged-access-access-model), hosting the most valuable assets in the organizational IT infrastructure. Because of that, it must be carefully protected and monitored from a security perspective. In terms of security posture optimization and threat monitoring, the "[Defender for Key Vault](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-key-vault-introduction?msclkid=7bdc49a5cfdf11ec92ed57d5dd838cc1)" protection plan in Microsoft Defender for Cloud allows to get actionable [recommendations](https://docs.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference?msclkid=0ece65b8cfe011ecadaa858e8a388068) on the issue to be corrected and clear [alerts](https://docs.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-azurekv) on the threats to be investigated.  
 
 ![defender-for-keyvault](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-09-How%20to%20verify%20the%20effective%20use%20of%20Customer%20Managed%20Keys/mdckv.png)
