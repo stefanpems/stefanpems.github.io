@@ -97,9 +97,10 @@ on $left.identity_claim_appid_g == $right.ResourceIdentity
 
 ![query2](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-09-How%20to%20verify%20the%20effective%20use%20of%20Customer%20Managed%20Keys/query2.png)
 
-Alternatively, without doing the two "join" operations in the query just shown above, it is possible to retrieve the name of the calling application by reading the "trustedService_s" field and the name of the managed identity by parsing the content of the field "identity_claim_xms_mirid_s". For a managed identity related to a Storage Account, the field has a content similar to this example:
+Alternatively, without doing the two "join" operations in the query just shown above, it is possible to retrieve the name of a calling application directly in the AzureDiagnostics table, by reading the "trustedService_s" field. The name of a calling managed identity, instead, can be retrieved by parsing the content of the field "identity_claim_xms_mirid_s". For a managed identity related to a Storage Account, the field has a content similar to this example:
 
-**Example of content for "identity_claim_xms_mirid_s" for the managed identity of a Storage Account:** /subscriptions/<<subscription-id>>/resourcegroups/<<rg-name>>/providers/Microsoft.Storage/storageAccounts/staccsecuritylabwe001
+**** 
+/subscriptions/<subscription-id>/resourcegroups/<rg-name>/providers/Microsoft.Storage/storageAccounts/staccsecuritylabwe001
 {: .notice}
 
 Just as a side note, in my lab environment the query shown above returns a quite high number of "Forbidden" results due to the repeated operations of disabling keys for testing purposes. 
