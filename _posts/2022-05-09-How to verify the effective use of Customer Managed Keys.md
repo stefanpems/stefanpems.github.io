@@ -99,7 +99,6 @@ on $left.identity_claim_appid_g == $right.ResourceIdentity
 
 Alternatively, without doing the two "join" operations in the query just shown above, it is possible to retrieve the name of a calling application directly in the AzureDiagnostics table, by reading the "trustedService_s" field. In the same table, the name of a calling managed identity, instead, can be retrieved by parsing the content of the field "identity_claim_xms_mirid_s". For a managed identity related to a Storage Account, the field has a content similar to this example:
 
-**** 
 /subscriptions/<<subscription-id>>/resourcegroups/<<rg-name>>/providers/Microsoft.Storage/storageAccounts/staccsecuritylabwe001
 {: .notice}
 
