@@ -108,7 +108,7 @@ By writing a custom KQL query as shown above, it is possible to parse the exact 
 
 Just as a side note, in my lab environment the query shown above returns a quite high number of "Forbidden" results due to the repeated operations of disabling keys for testing purposes. 
 
-From a monitoring point of view, it is important to consider that [the different diagnostics and insights capabilities in AKV](https://docs.microsoft.com/en-us/azure/key-vault/general/monitor-key-vault) allow to take under continuous control the performances and failures of the existing vaults. This is an extremely important functionality, especially when AKV hosts CMKs repeatedly accessed by their corrispective Azure services.
+From a monitoring point of view, it is important to consider that [the different diagnostics and insights capabilities in AKV](https://docs.microsoft.com/en-us/azure/key-vault/general/monitor-key-vault) allow to take under continuous control the performances and failures of the existing vaults. This is an extremely important functionality, especially when AKV hosts CMKs which may be frequently accessed by their corrispective Azure services. The service limits of AKV are described [here](https://docs.microsoft.com/en-us/azure/key-vault/general/service-limits).
 
 ![azure-monitor-for-AKV](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-09-How%20to%20verify%20the%20effective%20use%20of%20Customer%20Managed%20Keys/azmon.png)
 
