@@ -54,7 +54,7 @@ I recommend running the above query on a wide time range (e.g., 30 days):
 
 ![kql-query](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-22-M365D%20raw%20data%20ingestion%20in%20Sentinel/kql.jpg)
 
-Please note that, in the query shown above, I'm explicitly listing all the Advanced Hunting tables to be included in the union instead of using "union withsource=MDTables**" because this last "one row" KQL statement returns a list of tables which does not coincide completely with the tables that are ingested in Sentinel. The list of tables returned by "union withsource=MDTables**" can be retrieved with the following simple query:
+Please note that, in the query shown above, I'm explicitly listing all the Advanced Hunting tables to be included in the union instead of using "union withsource=MDTables*" because this last "one row" KQL statement returns a list of tables which does not coincide completely with the tables that are ingested in Sentinel. The list of tables returned by "union withsource=MDTables*" can be retrieved with the following simple query:
 
 ```html
 {% raw %}
