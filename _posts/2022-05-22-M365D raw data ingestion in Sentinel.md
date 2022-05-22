@@ -1,5 +1,5 @@
 ---
-title: "Ho to estimate the cost of Microsoft 365 Defender raw data ingestion in Microsoft Sentinel"
+title: "How to estimate the cost of Microsoft 365 Defender raw data ingestion in Microsoft Sentinel"
 last_modified_at: 2022-05-22T23:15:02-05:00
 tags:
   - Microsoft 365 Defender
