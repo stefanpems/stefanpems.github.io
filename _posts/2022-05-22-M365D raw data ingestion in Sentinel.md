@@ -9,7 +9,7 @@ tags:
 
 Recently a few customers asked me to estimate the increase of costs that they would see by enabling "raw data" (Advanced Hunting data) ingestion from Microsoft 365 Defender into Microsoft Sentinel.
 
-This ingestion is very recommended as it strenghten the threat detection capability of Microsoft Sentinel:: just as a first evidence, at the time of this writing, there are more than 40 Analytic Rule templates in Sentinel that leverage the raw data coming from Microsoft 365 Defender. This ingestion can be enabled by activating the "Microsoft 365 Defender" data connector in Sentinel. 
+This ingestion is very recommended as it strenghten the threat detection capability of Microsoft Sentinel: just as a first evidence, at the time of this writing, there are more than 40 Analytic Rule templates in Sentinel that leverage the raw data coming from Microsoft 365 Defender. This ingestion can be enabled by activating the "Microsoft 365 Defender" data connector in Sentinel. 
 
 The increment of Sentinel costs due to this additional ingestion is strongly reduced, if not completely zeroed, by the [Microsoft Sentinel benefit for Microsoft 365 E5, A5, F5, and G5 customers](https://azure.microsoft.com/en-us/offers/sentinel-microsoft-365-offer/): at the time of this writing, customers <cite><a href="https://azure.microsoft.com/en-us/offers/sentinel-microsoft-365-offer/">get a data grant of up to 5 MB per user per day of Microsoft 365 data ingestion into Microsoft Sentinel</a></cite>. Please refer to the linked page to read the details of the licenses and table included in the benefit.
 
