@@ -7,7 +7,7 @@ tags:
   - Costs
 ---
 
-Recently a few customers asked me to estimate the increase of costs that they would see by enabling "raw data" (Advanced Hunting data) ingestion from Microsoft 365 Defender to Microsoft Sentinel.
+Recently a few customers asked me to estimate the increase of costs that they would see by enabling "raw data" (Advanced Hunting data) ingestion from Microsoft 365 Defender into Microsoft Sentinel.
 
 This ingestion is very recommended as it strenghten the threat detection capability of Microsoft Sentinel:: just as a first evidence, at the time of this writing, there are more than 40 Analytic Rule templates in Sentinel that leverage the raw data coming from Microsoft 365 Defender. This ingestion can be enabled by activating the "Microsoft 365 Defender" data connector in Sentinel. 
 
