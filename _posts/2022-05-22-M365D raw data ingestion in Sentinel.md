@@ -13,7 +13,7 @@ This ingestion is very recommended as it strenghten the threat detection capabil
 
 The increment of Sentinel costs due to this additional ingestion is strongly reduced, if not completely zeroed, by the [Microsoft Sentinel benefit for Microsoft 365 E5, A5, F5, and G5 customers](https://azure.microsoft.com/en-us/offers/sentinel-microsoft-365-offer/): at the time of this writing, customers <cite><a href="https://azure.microsoft.com/en-us/offers/sentinel-microsoft-365-offer/">get a data grant of up to 5 MB per user per day of Microsoft 365 data ingestion into Microsoft Sentinel</a></cite>. Please refer to the linked page to read the details of the licenses and table included in the benefit.
 
-To estimate the increment of Sentinel costs, I recommend doing the list of actions decribed in this flowchart:
+To estimate the increment of Sentinel costs, I recommend doing the list of actions described in this flowchart:
 
 ![flowchart](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-22-M365D%20raw%20data%20ingestion%20in%20Sentinel/flowchart.png)
 
