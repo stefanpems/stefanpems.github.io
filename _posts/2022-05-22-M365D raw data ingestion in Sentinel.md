@@ -78,3 +78,4 @@ In the flowchart I'm showing this example:
 
 As always, I hope that the information provided in this post may be useful. 
 
+PS. I recommend checking also the article written on the same topic by Rob Trent: [Estimating the Size of the M365 Advanced Tables for Microsoft Sentinel Enablement](https://azurecloudai.blog/2022/05/11/estimating-the-size-of-the-m365-advanced-tables-for-microsoft-sentinel-enablement/)
