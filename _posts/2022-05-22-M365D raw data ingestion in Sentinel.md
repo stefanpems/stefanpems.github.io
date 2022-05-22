@@ -71,3 +71,10 @@ Once again, I recommend setting the "TimeRange" parameter in the workbook to a w
 
 With the result of the KQL query, the evidence of the workbook and some math, you can do a simple calculation to retrieve how many MB per user per day you are going to ingest, after the activation of the "Microsoft 365 Defender" data connector in Sentinel, on the Sentinel tables that are eligible for the Microsoft 365 E5, A5, F5, and G5 benefit. The amount that possibly exceeds the 5 MB per user per day is the increase of billable ingestion.
 
+In the flowchart I'm showing this example:
+* The Microsoft 365 Defender Advanced Hunting tables would cause an increase in ingestion of 4 MB per user per day (read from the kql query)
+* In Azure Log Analytics/Microsoft Sentinel, you are already ingesting 2 MB per user per day on the tables relevant for the benefit (read from the workbook)
+* The amount of ingestion that will cause an increase in the Sentinel costs is (4 + 2) - 5 = 1 MB per user per day (5 MB per user per day is the current value of the benefit)
+
+As always, I hope that the information provided in this post may be useful. 
+
