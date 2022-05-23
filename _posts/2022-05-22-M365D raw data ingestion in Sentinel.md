@@ -77,17 +77,16 @@ In the flowchart I'm showing this example:
 * The amount of ingestion that will cause an increase in the Sentinel costs is (4 + 2) - 5 = 1 MB per user per day (5 MB per user per day is the current value of the benefit)
 
 **Warning Notice:** 
+
 I did an "a posteriori" test, several days after activating the "Microsoft 365 Defender" connector in Sentinel with all its tables and I verified that the aforementioned KQL query to be executed in Microsoft 365 Defender (query based on the function static Kusto "[estimate_data_size ()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/estimate-data-sizefunction)") returns a size of about 20% -25% greater than the "billable" size that is actually found in the tables imported into Azure Log Analytics (same identical KQL query but replacing the call to the "estimate_data_size" function with the reading of the "[_BilledSize](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-standard-columns#_billedsize)" standard column available in Azure Log Analytics), while finding almost exactly the same overall number of rows. 
 
 As has just been clarified, the estimate of the increase in volumes and, therefore, of ingestion costs (before the application of the benefit) may turn out to be approximately one quarter worse than the reality. For more accurate results it is recommended to reduce the volumes calculated with the KQL query shown above by 20%.
 
-Example of results in Microsoft 365 Defender (with a custom time range of 14 days):
+Example of results in Microsoft 365 Defender with a custom time range of 14 days:
 ![results-in-m365d](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-22-M365D%20raw%20data%20ingestion%20in%20Sentinel/resinm365d.png)
 
-Example of results in Azure Log Analytics (with the same exact time range):
+Example of results in Azure Log Analytics with the same exact time range:
 ![results-in-ala](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-22-M365D%20raw%20data%20ingestion%20in%20Sentinel/resinala.png)
-
-{: .notice--warning}
 
 As always, I hope that the information provided in this post may be useful. 
 
