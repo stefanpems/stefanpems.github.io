@@ -9,7 +9,11 @@ tags:
 
 Recently a few customers asked me to estimate the increase of costs that they would see by enabling "raw data" (Advanced Hunting data) ingestion from Microsoft 365 Defender into Microsoft Sentinel.
 
-This ingestion is highly recommended as it strenghtens the Microsoft Sentinel's threat detection capability for customers using the services in Microsoft 365 Defender: just as a first evidence, at the time of this writing, there are more than 40 Analytic Rule templates in Sentinel that leverage the raw data coming from Microsoft 365 Defender. Additionally, this ingestion enables access to this data for a much longer period than the 30 days available in Microsoft 365 Defender Advanced Hunting. This data ingestion can be configured by activating the "Microsoft 365 Defender" data connector in Sentinel.
+This ingestion is highly recommended as it strenghtens the Microsoft Sentinel's threat detection capability for customers using the services in Microsoft 365 Defender: just as a first evidence, at the time of this writing, there are more than 40 Analytic Rule templates in Sentinel that leverage the raw data coming from Microsoft 365 Defender. Additionally, this ingestion enables access to this data for a much longer period than the 30 days available in Microsoft 365 Defender Advanced Hunting. 
+
+This data ingestion can be configured by activating the "Microsoft 365 Defender" data connector in Sentinel.
+
+![dataconnector](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-05-22-M365D%20raw%20data%20ingestion%20in%20Sentinel/dataconnector.png)
 
 The increment of Sentinel costs due to this additional ingestion is strongly reduced, if not completely zeroed, by the [Microsoft Sentinel benefit for Microsoft 365 E5, A5, F5, and G5 customers](https://azure.microsoft.com/en-us/offers/sentinel-microsoft-365-offer/): at the time of this writing, customers <cite><a href="https://azure.microsoft.com/en-us/offers/sentinel-microsoft-365-offer/">get a data grant of up to 5 MB per user per day of Microsoft 365 data ingestion into Microsoft Sentinel</a></cite>. Please refer to the linked page to read the details of the licenses and tables included in the benefit.
 
