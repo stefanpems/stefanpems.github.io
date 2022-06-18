@@ -133,3 +133,5 @@ The following image shows the available predefined Analytic Rules templates rela
 Additional recommendations for custom Analytic Rules or Hunting queries in Sentinel can be found on the internet. For example this article containst interesting queries: [Protecting Azure Key Vault with Azure Sentinel – Microsoft Sentinel 101 (learnsentinel.blog)](https://learnsentinel.blog/2021/09/09/protecting-azure-key-vault-with-azure-sentinel/)  
 
 As always, I hope that the information provided in this post may be useful. 
+
+PS. Feedback on this blog post can be added in this related [LinkedIn post](https://www.linkedin.com/posts/stefanopescosolido_how-to-verify-the-effective-use-of-customer-activity-6929567951213707264-ZGf-?utm_source=linkedin_share&utm_medium=member_desktop_web)

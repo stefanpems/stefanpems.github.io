@@ -72,3 +72,5 @@ As already mentioned, the JSON template of the full Logic App can be downloaded 
 * "insert-your-resource-group-name" (It's the Azure Resource Group where you have your Logic App)
 
 I hope that what I shared here can be useful for your needs of automated security controls.
+
+PS. Feedback on this blog post can be added in this related [LinkedIn post](https://www.linkedin.com/posts/stefanopescosolido_how-to-call-microsoft-365-defender-api-from-activity-6924489746308059136-SWyb?utm_source=linkedin_share&utm_medium=member_desktop_web)

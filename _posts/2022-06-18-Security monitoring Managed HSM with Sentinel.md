@@ -1,6 +1,6 @@
 ---
 title: "Security Monitoring Azure Key Vault Managed HSM with Microsoft Sentinel"
-last_modified_at: 2022-05-22T23:15:02-05:00
+last_modified_at: 2022-06-18T19:15:02-05:00
 tags:
   - BYOK
   - Customer Managed Key
