@@ -4,6 +4,8 @@ last_modified_at: 2022-05-10T07:15:02-05:00
 tags:
   - BYOK
   - Customer Managed Key
+  - Key Vault
+  - Managed HSM
   - Azure Monitor
   - Sentinel
   - Defender for Cloud
