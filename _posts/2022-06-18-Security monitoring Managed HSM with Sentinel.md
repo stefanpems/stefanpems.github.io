@@ -12,7 +12,7 @@ tags:
 
 [Azure Key Vault Managed HSM (Hardware Security Module)](https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/overview) - in the rest of this post abbreviated as MHSM - is a fully managed, highly available, single-tenant, standards-compliant cloud service that enables customers to safeguard cryptographic keys for their cloud applications, using FIPS 140-2 Level 3 validated HSMs and with a customer-controlled [security domain](https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/security-domain).
 
-The deployment of MSHMs is ideal for highly regulated "[Bring Your Own Key](https://docs.microsoft.com/en-us/azure/key-vault/keys/byok-specification)" (BYOK) scenarios or when customers want to fully control the ["Root of Trust"](https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/mhsm-control-data) of their cloud-based key management solution. Several types of Microsoft Azure services already allow to encrypt "at rest" customers' data by using a "[Customer Managed Key](https://docs.microsoft.com/en-us/azure/security/fundamentals/encryption-models#supporting-services)" (CMK) stored in a MHSM; this capability will be soon available for the wide majority of Microsoft cloud services.
+The deployment of MHSMs is ideal for highly regulated "[Bring Your Own Key](https://docs.microsoft.com/en-us/azure/key-vault/keys/byok-specification)" (BYOK) scenarios or when customers want to fully control the ["Root of Trust"](https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/mhsm-control-data) of their cloud-based key management solution. Several types of Microsoft Azure services already allow to encrypt "at rest" customers' data by using a "[Customer Managed Key](https://docs.microsoft.com/en-us/azure/security/fundamentals/encryption-models#supporting-services)" (CMK) stored in a MHSM; this capability will be soon available for the wide majority of Microsoft cloud services.
 
 MHSM is clearly a critical component in a customer's cloud deployment, requiring the higher level of protection both in terms of security posture ([configuration best practices](https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/best-practices)) and security monitoring. 
 
@@ -123,7 +123,7 @@ The Analytic Rules described and tested in this blog post enable the threat dete
 * incidents can trigger the automatic creation and assignment of tickets in IT Service Management tools like ServiceNow, etc...
 * threat containement actions can be executed automatically (e.g., IP blocked at firewall level, ...)
 
-A final note: at the time of this writing (June 18, 2022), the "Key Vault" protection plan in Microsoft Defender for Cloud does not cover MSHM instances. I believe that this feature will be added quite soon in the future. For the time being, the Sentinel's threat detection capability is the only one available to protect MHSM instances. It's always important to monitor IT resources with a SIEMs like Sentinel; for MHSM is even more critical. 
+A final note: at the time of this writing (June 18, 2022), the "Key Vault" protection plan in Microsoft Defender for Cloud does not cover MHSM instances. I believe that this feature will be added quite soon in the future. For the time being, the Sentinel's threat detection capability is the only one available to protect MHSM instances. It's always important to monitor IT resources with a SIEMs like Sentinel; for MHSM is even more critical. 
 {: .notice}
 
 As always, I hope that the information provided in this blog post may be useful. 
