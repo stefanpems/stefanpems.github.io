@@ -96,8 +96,8 @@ For the sake of completeness, I present here below the commands that can be used
 ```html
 {% raw %}
 az keyvault key create --hsm-name "<MHSM-NAME>" --kty RSA-HSM --size 2048 --name "<NEW-KEY-NAME>"
-az keyvault key show --hsm-name "<MHSM-NAME>" --name "<NEW-KEY-NAME>"
-az keyvault key delete --hsm-name "<MHSM-NAME>" --name "<NEW-KEY-NAME>"
+az keyvault key show --hsm-name "<MHSM-NAME>" --name "<KEY-NAME>"
+az keyvault key delete --hsm-name "<MHSM-NAME>" --name "<KEY-NAME>"
 {% endraw %}
 ```
 
