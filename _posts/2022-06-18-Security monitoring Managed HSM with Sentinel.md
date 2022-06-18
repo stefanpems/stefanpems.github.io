@@ -123,7 +123,7 @@ The Analytic Rules described and tested in this blog post enable the threat dete
 * incidents can trigger the automatic creation and assignment of tickets in IT Service Management tools like ServiceNow, etc...
 * threat containement actions can be executed automatically (e.g., IP blocked at firewall level, ...)
 
-A final note: at the time of this writing (June 18, 2022), the "Key Vault" protection plan in Microsoft Defender for Cloud does not cover MHSM instances. I believe that this feature will be added quite soon in the future. For the time being, the Sentinel's threat detection capability is the only one available to protect MHSM instances. It's always important to monitor IT resources with a SIEMs like Sentinel; for MHSM is even more critical. 
+A final note: at the time of this writing (June 18, 2022), the "Key Vault" protection plan in Microsoft Defender for Cloud does not cover MHSM instances. I believe that this feature will be added quite soon in the future. For the time being, the Sentinel's threat detection capability is the only one available to protect MHSM instances. It's always important to monitor IT resources with a SIEM like Sentinel; for MHSM is even more critical. 
 {: .notice}
 
 As always, I hope that the information provided in this blog post may be useful. 
