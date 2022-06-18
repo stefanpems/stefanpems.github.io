@@ -127,3 +127,5 @@ A final note: at the time of this writing (June 18, 2022), the "Key Vault" prote
 {: .notice}
 
 As always, I hope that the information provided in this blog post may be useful. 
+
+PS. Feedbacks on this blog post can be added in this related [LinkedIn post](https://www.linkedin.com/posts/stefanopescosolido_security-monitoring-azure-key-vault-managed-activity-6943979665271214080-4mOO?utm_source=linkedin_share&utm_medium=member_desktop_web)
