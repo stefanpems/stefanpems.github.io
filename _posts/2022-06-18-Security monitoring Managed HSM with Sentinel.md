@@ -77,6 +77,9 @@ The 4 Analytic Rules included in the solution must be enabled one by one. They r
 
 The "Replace All" text editing action shown in the figure above must be repeated for each of the 4 Analytic Rules included in the solution.
 
+Note: you may want to create a copy of your Analytic Rules for MHSM instead of directly modifying the original ones available for Azure Key Vault. This is required, for example, if you need to monitor both MHSMs and Key Vaults. Moreover please also consider that some detection logic included in these 4 Analytic Roles is specifically written for Key Vaults; as an example, this is true for the logic related to the management of "secrets". You may want to modify the KQL queries to remove code which is not relevant for MSHMs.  
+{: .notice}
+
 The following figure shows all the 4 Analytic Rules in the status "Enabled".
 
 ![enabled-rules](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-06-18-Security%20monitoring%20Managed%20HSM%20with%20Sentinel/enabled-rules.png)
