@@ -1,6 +1,6 @@
 ---
 title: "Security Monitoring Azure Key Vault Managed HSM with Microsoft Sentinel"
-last_modified_at: 2022-06-18T19:15:02-05:00
+last_modified_at: 2022-06-20T10:15:02-05:00
 tags:
   - BYOK
   - Customer Managed Key
@@ -77,7 +77,7 @@ The 4 Analytic Rules included in the solution must be enabled one by one. They r
 
 The "Replace All" text editing action shown in the figure above must be repeated for each of the 4 Analytic Rules included in the solution.
 
-Note: you may want to create a copy of your Analytic Rules for MHSM instead of directly modifying the original ones available for Azure Key Vault. This is required, for example, if you need to monitor both MHSMs and Key Vaults. Moreover please also consider that some detection logic included in these 4 Analytic Roles is specifically written for Key Vaults; as an example, this is true for the logic related to the management of "secrets". You may want to modify the KQL queries to remove code which is not relevant for MSHMs.  
+Note: you may want to create a copy of your Analytic Rules for MHSM instead of directly modifying the original ones available for Azure Key Vault. This may be the best choice, for example, if you need to monitor both MHSMs and Key Vaults. Moreover please also consider that some detection logic included in these 4 Analytic Roles is specifically written for Key Vaults; as an example, this is true for the logic related to the management of "secrets". In the rules dedicated to MHSM you may want to modify the KQL queries to leave only the code which is relevant to that kind of service.  
 {: .notice}
 
 The following figure shows all the 4 Analytic Rules in the status "Enabled".
