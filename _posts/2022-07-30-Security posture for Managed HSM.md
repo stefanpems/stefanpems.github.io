@@ -7,7 +7,7 @@ tags:
   - Key Vault
   - Managed HSM
   - Azure Monitor
-  - Sentinel
+  - Azure Policy
 ---
 
 In my [previous blog post](https://stefanpems.github.io/Security-monitoring-Managed-HSM-with-Sentinel/) I described how to monitor, from a security perspective, the events occurring on an [Azure Key Vault Managed HSM (Hardware Security Module)](https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/overview) - in the rest of this post abbreviated as "MHSM" - by using [Microsoft Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/overview). This security monitoring allows to identify suspicious activities and to react accordingly.
@@ -34,7 +34,7 @@ As already clarified, at the time of this writing these individual policies are 
 
 ![policy-assignment](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-07-30-Security%20posture%20for%20Managed%20HSM/policy-assignment.png)
 
-Additional "custom policies" can be created to further protect MSHMs. 
+Additional "custom policies" can be created to further protect MHSMs. 
 
 When all policies are assigned at the desired scope, it is possible to have a view of their effect by using the "Compliance" page of the Azure Policy blade.
 
