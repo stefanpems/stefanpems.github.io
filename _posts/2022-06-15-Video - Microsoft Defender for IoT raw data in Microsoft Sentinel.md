@@ -1,5 +1,5 @@
 ---
-title: "Microsoft Defender for IoT raw data in Microsoft Sentinel"
+title: "New video: Microsoft Defender for IoT raw data in Microsoft Sentinel"
 last_modified_at: 2022-06-15T00:00:00-00:00
 tags:
   - Defender for IoT
