@@ -8,11 +8,11 @@ tags:
 
 Microsoft Sentinel has a specific Data Connector which allows to collect the alerts comining from Microsoft Defender for IoT. This data ingestion is free of charge.
 
-![data-conmector](2022-06-15-Video%20-%20Microsoft%20Defender%20for%20IoT%20raw%20data%20in%20Microsoft%20Sentinel/data-connector.png)
+![data-conmector](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-06-15-Video%20-%20Microsoft%20Defender%20for%20IoT%20raw%20data%20in%20Microsoft%20Sentinel/data-connector.png)
 
 A specific solution, available in the Sentinel's Content Hub, allows to deploy Analytic Rules, Plabooks and a Workbook specialized for IoT/OT related security.
 
-![solution](2022-06-15-Video%20-%20Microsoft%20Defender%20for%20IoT%20raw%20data%20in%20Microsoft%20Sentinel/solution.png)
+![solution](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-06-15-Video%20-%20Microsoft%20Defender%20for%20IoT%20raw%20data%20in%20Microsoft%20Sentinel/solution.png)
 
 More on that in the Microsoft Security's video [Better Together: Microsoft Sentinel - IT/OT Threat Monitoring with Defender for IoT Solution](https://www.youtube.com/watch?v=3BLlhaxANJA%C2%A0&feature=youtu.be).
 
@@ -21,6 +21,6 @@ In the past few weeks I had the chance to collaborate with my great colleague [H
 Hesham and I have shown our experience in this new video, published in the Microsoft Defender for IoT Ninja training page and in the Microsoft Security Community channel in Youtube:
 
 *[Microsoft Defender for IoT raw data in Microsoft Sentinel](https://www.youtube.com/watch?v=TaYPUkHALFA&t=2s)*
-![new-video](2022-06-15-Video%20-%20Microsoft%20Defender%20for%20IoT%20raw%20data%20in%20Microsoft%20Sentinel/sonew-video.png)
+![new-video](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-06-15-Video%20-%20Microsoft%20Defender%20for%20IoT%20raw%20data%20in%20Microsoft%20Sentinel/sonew-video.png)
 
 Hope you'll find it interesting and useful!
