@@ -21,6 +21,6 @@ In the past few weeks I had the chance to collaborate with my great colleague [H
 Hesham and I have shown our experience in this new video, published in the Microsoft Defender for IoT Ninja training page and in the Microsoft Security Community channel in Youtube:
 
 *[Microsoft Defender for IoT raw data in Microsoft Sentinel](https://www.youtube.com/watch?v=TaYPUkHALFA&t=2s)*
-![new-video](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-06-15-Video%20-%20Microsoft%20Defender%20for%20IoT%20raw%20data%20in%20Microsoft%20Sentinel/sonew-video.png)
+![new-video](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-06-15-Video%20-%20Microsoft%20Defender%20for%20IoT%20raw%20data%20in%20Microsoft%20Sentinel/new-video.png)
 
 Hope you'll find it interesting and useful!
