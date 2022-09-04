@@ -18,4 +18,6 @@ The demo shows the detection capabilities of Defender for Container in the areas
 **[Defender for Containers - Demo in a Multi-Cloud Environment Lab](https://www.youtube.com/watch?v=62_Cj6yseno)**
 ![new-video](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-08-31-Video%20-%20Defender%20for%20Containers%20-%20Demo%20in%20a%20Multi-Cloud%20Environment%20Lab/thumbnail.png)
 
+Slides (in pdf) [here](https://raw.githubusercontent.com/stefanpems/stefanpems.github.io/master/assets/2022-08-31-Video%20-%20Defender%20for%20Containers%20-%20Demo%20in%20a%20Multi-Cloud%20Environment%20Lab/slides.pdf)
+
 Hope you'll find it interesting and useful!
